@@ -1,0 +1,18 @@
+<div style="text-align:center">
+  <h1><u> {{ title }}
+  </u>
+  </h1>
+</div>
+
+<p *ngIf="showAlert">
+  <ngb-alert [type]="alertType.type" (close)="close(alert)" [dismissible]="true">
+    {{ alertType.message }}
+  </ngb-alert>
+</p>
+
+<div>
+    <h3>
+      Tickets:
+    </h3>
+    <ng2-smart-table [settings]="settings" [source]="data" (editConfirm)="onSaveConfirm($event)"></ng2-smart-table>
+</div>
